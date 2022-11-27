@@ -42,7 +42,7 @@ node* getNode(char data, int frequency, node *leftChild, node *rightChild) {
 void toHuffmanCode(node *root, string huffmanCode, map<char, string> &codePairs) {
   // do nothing if node is empty
   if (root == nullptr) {
-		return;
+    return;
   };
   
   // check if leaf node exist in root node
@@ -79,8 +79,8 @@ map<char, string> HuffmanCodes(map<char, int> data) {
 
     // create a new node with added frequency of two 
     // previous nodes then add it to the queue
-		tree.push(getNode('\0', left->frequency + right->frequency, left, right));
-	};
+    tree.push(getNode('\0', left->frequency + right->frequency, left, right));
+  };
 
   // stores character and encoded value
   map<char, string> codePairs;
@@ -100,9 +100,9 @@ int main() {
 
   // store character and calculated frequency data in a map
   map<char, int> data;
-	for (char ch: userInput) {
-		data[ch]++;
-	};
+  for (char ch: userInput) {
+    data[ch]++;
+  };
 
   // generate huffman Codes for all characters in user input string
   map<char, string> huffmanCodes = HuffmanCodes(data);
@@ -110,6 +110,6 @@ int main() {
   // display encoded character values on terminal
   cout << endl << "Huffman Codes: " << endl;
   for (auto pair: huffmanCodes) {
-		cout << pair.first << "   " << pair.second << endl;
-	};
+    cout << pair.first << "   " << pair.second << endl;
+  };
 };
